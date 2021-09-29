@@ -1,5 +1,5 @@
 var beginButton = document.getElementById("begin-button");
-var nextButton = document.getElementById("next-button");
+var nextButton = document.getElementByClass(".next-button");
 var questionList =  [ //created an array of questions and answers. 
     {
         question: "Which of these is NOT one of the seven primitive data types?",
@@ -74,5 +74,10 @@ var questionList =  [ //created an array of questions and answers.
         ]
     }
 ]
+console.log(beginButton);
 
+/*beginButton.addEventListener("click", start);
 
+function start() {
+    console.log("start");
+}*/

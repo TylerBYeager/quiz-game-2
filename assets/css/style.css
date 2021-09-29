@@ -37,3 +37,6 @@ section button {
     margin-bottom: 10px;
 }
 
+#next-button {
+    display: none;
+}

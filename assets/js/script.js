@@ -1,5 +1,5 @@
 var beginButton = document.getElementById("begin-button");
-var nextButton = document.getElementByClass(".next-button");
+var nextButton = document.getElementById("next-button");
 var questionList =  [ //created an array of questions and answers. 
     {
         question: "Which of these is NOT one of the seven primitive data types?",
@@ -74,10 +74,13 @@ var questionList =  [ //created an array of questions and answers.
         ]
     }
 ]
-console.log(beginButton);
 
-/*beginButton.addEventListener("click", start);
+beginButton.addEventListener("click", start);
 
 function start() {
-    console.log("start");
-}*/
+    beginButton.setAttribute("style", "display: none");
+    
+    nextButton.setAttribute("style", "display: initial"); //added function to hid begin button and bring the next button back
+}
+
+

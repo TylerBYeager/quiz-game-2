@@ -4,14 +4,34 @@
     box-sizing: border-box;
 }
 
-
 body {
     display: flex;
-    width: 100vw;
-    height: 100vh;
     justify-content: center;
     align-items: center;
+    width: 100vw;
+    height: 100vh;
     padding: 0 auto;
     margin: 0 auto;
+}
+
+main {
+    text-align: center;
+    border: 4px dashed yellow;
+    border-radius: 5px;
+    width: 800px;
+    max-width: 80%;
+    padding: 10px;
+    background-color: slategray;
+}
+
+section button {
+    background-color: rgb(163, 27, 163);
+    color: #fff;
+}
+
+.answers {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 

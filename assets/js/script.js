@@ -79,8 +79,16 @@ beginButton.addEventListener("click", start);
 
 function start() {
     beginButton.setAttribute("style", "display: none");
-    
+    randomizer();
     nextButton.setAttribute("style", "display: initial"); //added function to hid begin button and bring the next button back
 }
 
-
+function randomizer() { //function that will return a randomly selected index number from the qlist array
+    for(var i = 0; i < questionList.length; i++) {
+        var randomQuestions = 0;
+        for (var j =0; j < Math.floor(Math.random() *8 ); j++) {
+            randomQuestions++;
+        }
+        console.log(randomQuestions);
+    }
+}

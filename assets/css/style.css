@@ -12,21 +12,23 @@ body {
     height: 100vh;
     padding: 0 auto;
     margin: 0 auto;
+    background: linear-gradient(90deg, black, slategrey, slategrey, black)
 }
 
 main {
     text-align: center;
-    border: 4px dashed yellow;
+    border: 10px dashed yellow;
     border-radius: 5px;
     width: 800px;
     max-width: 80%;
     padding: 10px;
-    background-color: slategray;
+    background: linear-gradient(-45deg, red, yellow,blue);
 }
 
 section button {
-    background-color: rgb(163, 27, 163);
-    color: #fff;
+    background-color: rgb(139, 205, 247);
+    color: black;
+    border-radius: 10px;
 }
 
 .answers {
@@ -34,4 +36,3 @@ section button {
     gap: 10px;
     margin-bottom: 10px;
 }
-

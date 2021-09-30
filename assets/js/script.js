@@ -104,8 +104,7 @@ function randomizer() { //function that will replace 'question' with a question 
 
 
 function answerBars() {
-    for (var a = 0; a < questionList.length; a++) {
-        console.log(questionList[randomQuestions].answers);
-    }
-        
+    for (var a = 0; a < questionList[randomQuestions].answers.length; a++) {
+        console.log(questionList[randomQuestions].answers[a]);
+    }    
 }

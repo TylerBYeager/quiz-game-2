@@ -92,8 +92,8 @@ function randomizer() { //function that will replace 'question' with a question 
     answerBars();   
     var randomQuestions = 0;
         //console.log(questionList[i].question);//test to confirm that question list is being read. 
-        if (randomQuestions === (questionList.length -1))
-        randomizer(randomQuestions);
+        //if (randomQuestions === (questionList.length -1))
+        //randomizer(randomQuestions);
         questionLabel.innerText = questionList[randomQuestions].question;  
 
 

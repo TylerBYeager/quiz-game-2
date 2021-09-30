@@ -14,6 +14,7 @@ Things that I did not accomplish:
 2. Did not establish an on screen countdown timer although I do have an alert system set up.
 3. Did not create a scoreboard to save high scores. 
 ---
+![Preview](https://user-images.githubusercontent.com/89880190/135400823-0908e2d4-b38b-41ff-ad15-927cbc9d822d.png)
 
 ## Code Snippets
 Here are few code snippets that I enjoyed coding and what they accomplished. This first snippet is one that created a unique colorful background for the quiz body. 

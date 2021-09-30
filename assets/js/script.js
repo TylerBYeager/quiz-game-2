@@ -81,6 +81,7 @@ var questionList =  [ //created an array of questions and answers.
 ]
 
 beginButton.addEventListener("click", start);
+nextButton.addEventListener("click", next);
 
 function start() {
     beginButton.setAttribute("style", "display: none");
@@ -88,16 +89,12 @@ function start() {
     nextButton.setAttribute("style", "display: initial"); 
 }
 
-function randomizer() { //function that will replace 'question' with a question from the listed array
-    answerBars();   
-    var randomQuestions = 0;
+function randomizer() { //function that will replace 'question' with a question from the listed array   
         //console.log(questionList[i].question);//test to confirm that question list is being read. 
-        //if (randomQuestions === (questionList.length -1))
-        //randomizer(randomQuestions);
         questionLabel.innerText = questionList[randomQuestions].question;  
 
 
-
+    answerBars(); 
     }
 
 
@@ -107,4 +104,10 @@ function answerBars() {
         //console.log(document.getElementById('answer-'+ (a+1)).innerText) //test to see if answers were logging to their proper spots
         document.getElementById('answer-'+ (a+1)).innerText = questionList[randomQuestions].answers[a].answer
     }    
+}
+
+
+function next() { //adds ability to cycle to the next question
+    randomizer();
+    randomQuestions = randomQuestions+1;
 }

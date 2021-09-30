@@ -1,7 +1,6 @@
 var beginButton = document.getElementById("begin-button");
 var nextButton = document.getElementById("next-button");
 var questionLabel = document.getElementById('question');
-var answerButtons = document.getElementById('answer');
 var randomQuestions = 0;
 var scoreBoard =0;
 
@@ -82,7 +81,7 @@ var questionList =  [ //created an array of questions and answers.
 
 beginButton.addEventListener("click", start);
 nextButton.addEventListener("click", next);
-answerButtons.addEventListener("click", answerCheck);
+//answerButtons.addEventListener("click", answerCheck);
 
 
 function start() {
@@ -104,21 +103,23 @@ function answerBars() {
     for (var a = 0; a < questionList[randomQuestions].answers.length; a++) {
         //console.log(questionList[randomQuestions].answers[a].answer); //test to see if answers were loggin
         //console.log(document.getElementById('answer-'+ (a+1)).innerText) //test to see if answers were logging to their proper spots
-        document.getElementById('answer-'+ (a+1)).innerText = questionList[randomQuestions].answers[a].answer
-
+        document.getElementById('answer-'+ (a+1)).innerText = questionList[randomQuestions].answers[a].answer;
+        
+        document.getElementById(`answer-${a + 1}`).addEventListener("click", answerCheck);
         }
     } 
 
 function next() { //adds ability to cycle to the next question
-    randomizer();
+    randomizer(); 
     randomQuestions = randomQuestions+1;
-}
+    }
 
 
 function answerCheck() {
-        if (questionList[randomQuestions].answers[a].answer === true) {
+    for (let i = 0; i < questionList[randomQuestions].answers.length; i++) {
+        if (questionList[randomQuestions].answers[i].answer.correct == true) {
             scoreBoard++;
         }
     }
-
+}
 

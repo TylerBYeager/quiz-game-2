@@ -97,7 +97,6 @@ function randomizer() { //function that will replace 'question' with a question 
         randomizer(randomQuestions);
         questionLabel.innerText = questionList[randomQuestions].question;  
 
-        console.log(questionList[i].answers);
 
 
     }
@@ -105,10 +104,8 @@ function randomizer() { //function that will replace 'question' with a question 
 
 
 function answerBars() {
-    var randomAnswers = 0;
-    for(var a = 0; a < questionList.length; a++) {      
-        if (randomAnswers === (questionList.length -1))
-        answerBars(randomAnswers);
-        answerLabels.innerText = questionList[randomAnswers].answers;
-        }
+    for (var a = 0; a < questionList.length; a++) {
+        console.log(questionList[randomQuestions].answers);
     }
+        
+}

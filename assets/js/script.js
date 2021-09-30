@@ -1,7 +1,8 @@
 var beginButton = document.getElementById("begin-button");
 var nextButton = document.getElementById("next-button");
-var randomQuestions = 0;
 var questionLabel = document.getElementById('question');
+var answerLabels = document.getElementById('answer');
+var randomQuestions = 0;
 
 var questionList =  [ //created an array of questions and answers. 
     {
@@ -82,16 +83,21 @@ beginButton.addEventListener("click", start);
 
 function start() {
     beginButton.setAttribute("style", "display: none");
-    randomizer();
-    
-    nextButton.setAttribute("style", "display: initial"); //added function to hid begin button and bring the next button back
+    randomizer(); //executing the function when the eventlistener for start is clicked
+    nextButton.setAttribute("style", "display: initial"); 
 }
 
-function randomizer() { //function that will return a randomly selected index number from the qlist array
+function randomizer() { //function that will replace 'question' with a question from the listed array
     for(var i = 0; i < questionList.length; i++) {
-        //var randomQuestions = 0;
-        console.log(questionList[i].question);
-        questionLabel.innerText = questionList.question;
-    //}
+        var randomQuestions = 0;
+        console.log(questionList[i].question);//test to confirm that question list is being read. 
+        if (randomQuestions === (questionList.length -1))
+        randomizer(randomQuestions);
+        questionLabel.innerText = questionList[randomQuestions].question;
+        
+    }
 }
+
+function answerBars() {
+
 }

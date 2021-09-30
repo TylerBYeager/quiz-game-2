@@ -1,6 +1,7 @@
 var beginButton = document.getElementById("begin-button");
 var nextButton = document.getElementById("next-button");
 var questionLabel = document.getElementById('question');
+var countDown = document.getElementById('timout');
 var randomQuestions = 0;
 var scoreBoard =0;
 
@@ -85,6 +86,7 @@ nextButton.addEventListener("click", next);
 
 function start() {
     beginButton.setAttribute("style", "display: none");
+    timer();
     randomizer(); //executing the function when the eventlistener for start is clicked
     nextButton.setAttribute("style", "display: initial"); 
 }
@@ -128,3 +130,17 @@ function answerCheck(event) {
     }
 }
 console.log(scoreBoard);*/
+
+
+function timer() {
+    setTimeout(halfTime, 1000 * 10);
+    setTimeout(gameOver, 1000 * 20);
+}
+
+
+function halfTime() {
+    alert("10 seconds left!");
+}
+function gameOver() {
+    alert("Game Over!");
+}

@@ -122,6 +122,7 @@ function answerCheck(event) {
         scoreBoard++;
     }
 }
+console.log(scoreBoard);
 
     /*for (let i = 0; i < questionList[randomQuestions].answers.length; i++) {
         if (questionList[randomQuestions].answers[i].correct == true) {

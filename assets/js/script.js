@@ -85,13 +85,12 @@ beginButton.addEventListener("click", start);
 function start() {
     beginButton.setAttribute("style", "display: none");
     randomizer(); //executing the function when the eventlistener for start is clicked
-    answerBars();
     nextButton.setAttribute("style", "display: initial"); 
 }
 
 function randomizer() { //function that will replace 'question' with a question from the listed array
-    for(var i = 0; i < questionList.length; i++) {
-        var randomQuestions = 0;
+    answerBars();   
+    var randomQuestions = 0;
         //console.log(questionList[i].question);//test to confirm that question list is being read. 
         if (randomQuestions === (questionList.length -1))
         randomizer(randomQuestions);
@@ -100,13 +99,12 @@ function randomizer() { //function that will replace 'question' with a question 
 
 
     }
-}
 
 
 function answerBars() {
     for (var a = 0; a < questionList[randomQuestions].answers.length; a++) {
-        console.log(questionList[randomQuestions].answers[a].answer);
-        console.log(document.getElementById('answer-'+ (a+1)).innerText)
+        //console.log(questionList[randomQuestions].answers[a].answer); //test to see if answers were loggin
+        //console.log(document.getElementById('answer-'+ (a+1)).innerText) //test to see if answers were logging to their proper spots
         document.getElementById('answer-'+ (a+1)).innerText = questionList[randomQuestions].answers[a].answer
     }    
 }

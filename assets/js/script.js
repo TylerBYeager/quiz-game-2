@@ -1,7 +1,7 @@
 var beginButton = document.getElementById("begin-button");
 var nextButton = document.getElementById("next-button");
 var questionLabel = document.getElementById('question');
-var answerLabels = document.getElementById('answer-'+ (a+1));
+var answerLabels = document.getElementById('answer');
 var randomQuestions = 0;
 var randomAnswers =0;
 
@@ -107,5 +107,6 @@ function answerBars() {
     for (var a = 0; a < questionList[randomQuestions].answers.length; a++) {
         console.log(questionList[randomQuestions].answers[a].answer);
         console.log(document.getElementById('answer-'+ (a+1)).innerText)
+        document.getElementById('answer-'+ (a+1)).innerText = questionList[randomQuestions].answers[a].answer
     }    
 }

@@ -1,9 +1,9 @@
 var beginButton = document.getElementById("begin-button");
 var nextButton = document.getElementById("next-button");
 var questionLabel = document.getElementById('question');
-var answerLabels = document.getElementById('answer');
+var answerButtons = document.getElementById('answer');
 var randomQuestions = 0;
-var randomAnswers =0;
+var scoreBoard =0;
 
 var questionList =  [ //created an array of questions and answers. 
     {
@@ -82,6 +82,8 @@ var questionList =  [ //created an array of questions and answers.
 
 beginButton.addEventListener("click", start);
 nextButton.addEventListener("click", next);
+answerButtons.addEventListener("click", answerCheck);
+
 
 function start() {
     beginButton.setAttribute("style", "display: none");
@@ -103,11 +105,20 @@ function answerBars() {
         //console.log(questionList[randomQuestions].answers[a].answer); //test to see if answers were loggin
         //console.log(document.getElementById('answer-'+ (a+1)).innerText) //test to see if answers were logging to their proper spots
         document.getElementById('answer-'+ (a+1)).innerText = questionList[randomQuestions].answers[a].answer
-    }    
-}
 
+        }
+    } 
 
 function next() { //adds ability to cycle to the next question
     randomizer();
     randomQuestions = randomQuestions+1;
 }
+
+
+function answerCheck() {
+        if (questionList[randomQuestions].answers[a].answer === true) {
+            scoreBoard++;
+        }
+    }
+
+

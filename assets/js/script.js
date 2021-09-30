@@ -1,7 +1,7 @@
 var beginButton = document.getElementById("begin-button");
 var nextButton = document.getElementById("next-button");
 var questionLabel = document.getElementById('question');
-var answerLabels = document.getElementById('answer');
+var answerLabels = document.getElementById('answer-'+ (a+1));
 var randomQuestions = 0;
 var randomAnswers =0;
 
@@ -105,6 +105,7 @@ function randomizer() { //function that will replace 'question' with a question 
 
 function answerBars() {
     for (var a = 0; a < questionList[randomQuestions].answers.length; a++) {
-        console.log(questionList[randomQuestions].answers[a]);
+        console.log(questionList[randomQuestions].answers[a].answer);
+        console.log(document.getElementById('answer-'+ (a+1)).innerText)
     }    
 }

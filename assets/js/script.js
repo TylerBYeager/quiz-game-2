@@ -3,6 +3,7 @@ var nextButton = document.getElementById("next-button");
 var questionLabel = document.getElementById('question');
 var answerLabels = document.getElementById('answer');
 var randomQuestions = 0;
+var randomAnswers =0;
 
 var questionList =  [ //created an array of questions and answers. 
     {
@@ -84,20 +85,30 @@ beginButton.addEventListener("click", start);
 function start() {
     beginButton.setAttribute("style", "display: none");
     randomizer(); //executing the function when the eventlistener for start is clicked
+    answerBars();
     nextButton.setAttribute("style", "display: initial"); 
 }
 
 function randomizer() { //function that will replace 'question' with a question from the listed array
     for(var i = 0; i < questionList.length; i++) {
         var randomQuestions = 0;
-        console.log(questionList[i].question);//test to confirm that question list is being read. 
+        //console.log(questionList[i].question);//test to confirm that question list is being read. 
         if (randomQuestions === (questionList.length -1))
         randomizer(randomQuestions);
-        questionLabel.innerText = questionList[randomQuestions].question;
-        
+        questionLabel.innerText = questionList[randomQuestions].question;  
+
+        console.log(questionList[i].answers);
+
+
     }
 }
 
-function answerBars() {
 
-}
+function answerBars() {
+    var randomAnswers = 0;
+    for(var a = 0; a < questionList.length; a++) {      
+        if (randomAnswers === (questionList.length -1))
+        answerBars(randomAnswers);
+        answerLabels.innerText = questionList[randomAnswers].answers;
+        }
+    }

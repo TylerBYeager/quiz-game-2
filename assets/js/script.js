@@ -81,7 +81,6 @@ var questionList =  [ //created an array of questions and answers.
 
 beginButton.addEventListener("click", start);
 nextButton.addEventListener("click", next);
-//answerButtons.addEventListener("click", answerCheck);
 
 
 function start() {
@@ -104,8 +103,8 @@ function answerBars() {
         //console.log(questionList[randomQuestions].answers[a].answer); //test to see if answers were loggin
         //console.log(document.getElementById('answer-'+ (a+1)).innerText) //test to see if answers were logging to their proper spots
         document.getElementById('answer-'+ (a+1)).innerText = questionList[randomQuestions].answers[a].answer;
-        
-        document.getElementById(`answer-${a + 1}`).addEventListener("click", answerCheck);
+        document.getElementById('answer-'+ (a+1)).setAttribute("data-set", questionList[randomQuestions].answers[a].correct);
+        document.getElementById('answer-'+ (a+1)).addEventListener("click", answerCheck);
         }
     } 
 
@@ -115,11 +114,17 @@ function next() { //adds ability to cycle to the next question
     }
 
 
-function answerCheck() {
-    for (let i = 0; i < questionList[randomQuestions].answers.length; i++) {
-        if (questionList[randomQuestions].answers[i].answer.correct == true) {
+function answerCheck(event) {
+    var checker = event.target.getAttribute("data-set");
+    if (checker == true) {
+        scoreBoard++;
+    }
+}
+
+    /*for (let i = 0; i < questionList[randomQuestions].answers.length; i++) {
+        if (questionList[randomQuestions].answers[i].correct == true) {
             scoreBoard++;
         }
     }
 }
-
+console.log(scoreBoard);*/
